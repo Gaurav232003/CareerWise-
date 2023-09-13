@@ -12,6 +12,7 @@ class Test extends StatefulWidget {
 
 class _TestState extends State<Test> {
   String selectedOption = '';
+  int i = 0, q = 1;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +38,7 @@ class _TestState extends State<Test> {
                     Row(
                       children: [
                         Text(
-                          '1.',
+                          '$q.',
                           style: TextStyle(
                               fontSize: 36.0, fontWeight: FontWeight.bold),
                         ),
@@ -47,57 +48,59 @@ class _TestState extends State<Test> {
                         Flexible(
                           child: Text(
                             softWrap: true,
-                            'Academic Percentage in Operating Systems',
+                            questions[i],
                             style: TextStyle(
                                 fontSize: 28.0, fontWeight: FontWeight.w500),
                           ),
                         )
                       ],
                     ),
-                    RadioListTile(
-                      activeColor: Color(0xFFF28F3B),
-                      title: Text('81% - 100%'),
-                      value: '81% - 100%',
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value!;
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      activeColor: Color(0xFFF28F3B),
-                      title: Text('61% - 80%'),
-                      value: '61% - 80%',
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value!;
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      activeColor: Color(0xFFF28F3B),
-                      title: Text('40% - 60%'),
-                      value: '40% - 60%',
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value!;
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      activeColor: Color(0xFFF28F3B),
-                      title: Text('Below 40%'),
-                      value: 'Below 40%',
-                      groupValue: selectedOption,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedOption = value!;
-                        });
-                      },
-                    ),
+                    for (int j = 0; j < 4; j++)
+                      RadioListTile(
+                        activeColor: Color(0xFFF28F3B),
+                        title: Text(ans[i][j]),
+                        value: ans[i][j],
+                        groupValue: selectedOption,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedOption = value!;
+                          });
+                        },
+                      ),
+
+                    // RadioListTile(
+                    //   activeColor: Color(0xFFF28F3B),
+                    //   title: Text('61% - 80%'),
+                    //   value: '61% - 80%',
+                    //   groupValue: selectedOption,
+                    //   onChanged: (value) {
+                    //     setState(() {
+                    //       selectedOption = value!;
+                    //     });
+                    //   },
+                    // ),
+                    // RadioListTile(
+                    //   activeColor: Color(0xFFF28F3B),
+                    //   title: Text('40% - 60%'),
+                    //   value: '40% - 60%',
+                    //   groupValue: selectedOption,
+                    //   onChanged: (value) {
+                    //     setState(() {
+                    //       selectedOption = value!;
+                    //     });
+                    //   },
+                    // ),
+                    // RadioListTile(
+                    //   activeColor: Color(0xFFF28F3B),
+                    //   title: Text('Below 40%'),
+                    //   value: 'Below 40%',
+                    //   groupValue: selectedOption,
+                    //   onChanged: (value) {
+                    //     setState(() {
+                    //       selectedOption = value!;
+                    //     });
+                    //   },
+                    // ),
                   ],
                 ),
               ),
@@ -107,12 +110,26 @@ class _TestState extends State<Test> {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFF28F3B)),
-                      onPressed: () {},
+                      onPressed: () {
+                        if (i != 0) {
+                          setState(() {
+                            i--;
+                            q--;
+                          });
+                        }
+                      },
                       child: Text('< Prev')),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFF28F3B)),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          if (i != questions.length - 1) {
+                            i++;
+                            q++;
+                          }
+                        });
+                      },
                       child: Text('NEXT >')),
                 ],
               ),
