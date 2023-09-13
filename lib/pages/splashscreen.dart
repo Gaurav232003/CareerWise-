@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackheads/components/data.dart';
 import 'test.dart';
 import 'dart:async';
 
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
+    total = 0;
     // Start a countdown timer
     Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
@@ -32,13 +33,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Splash Screen with Countdown'),
-      ),
+      backgroundColor: Color(0xFFF28F3B),
       body: Center(
-        child: Text(
-          '$_countdown', // Display the countdown value
-          style: TextStyle(fontSize: 48.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Test starts in:',
+              style: TextStyle(fontSize: 38.0),
+            ),
+            Text(
+              '$_countdown', // Display the countdown value
+              style: TextStyle(fontSize: 48.0),
+            ),
+          ],
         ),
       ),
     );
