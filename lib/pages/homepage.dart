@@ -14,6 +14,7 @@ import 'package:hackheads/pages/profile.dart';
 import 'package:hackheads/components/data.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'test.dart';
+import 'splashscreen.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     Home_Page(),
-    Test(),
+    SplashScreen(),
     Placeholder(
       child: Scaffold(body: Center(child: Text('Coming Soon'))),
     ),

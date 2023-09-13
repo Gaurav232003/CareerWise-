@@ -18,6 +18,10 @@ void main() async {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.bottom]);
 
+  for (int i = 0; i < questions.length; i++) {
+    marks.add(-1);
+    Selected.add("");
+  }
   // CheckData();
   // print('---------------------------------');
   // List<List<String>> valuesList = options.values.toList();
