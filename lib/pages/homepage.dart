@@ -145,24 +145,14 @@ class Home_Page extends StatelessWidget {
                               );
                             },
                             child: Material(
-                              elevation:
-                                  10.0, // Set the elevation value to give it a shadow.
-                              shape: CircleBorder(), // Create a circular shape.
-                              child: Container(
-                                width:
-                                    60.0, // Set the width of the circular container.
-                                height:
-                                    60.0, // Set the height of the circular container.
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color(
-                                        0xFFFAD89F) // Set the background color of the circular container.
-                                    ),
-                                child: Center(
-                                  child: Text(
-                                    'OK',
-                                    textAlign: TextAlign.center,
-                                  ),
+                              elevation: 15.0,
+                              shape: CircleBorder(),
+                              child: SizedBox(
+                                width: 60.0,
+                                height: 60.0,
+                                child: Image.asset(
+                                  'assets/user_icon.png',
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
