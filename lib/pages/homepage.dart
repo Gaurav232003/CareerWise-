@@ -130,9 +130,14 @@ class Home_Page extends StatelessWidget {
                           Row(
                             children: [
                               Image.asset('assets/Group-40.png'),
+                              SizedBox(
+                                width: 10.0,
+                              ),
                               Text(
                                 'Great\nDecision',
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
