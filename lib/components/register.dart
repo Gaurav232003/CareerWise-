@@ -28,16 +28,27 @@ class Register extends StatelessWidget {
 
         if (userCredential.user != null) {
           var uid = FirebaseAuth.instance.currentUser?.uid;
+          FirebaseDatabase database = FirebaseDatabase.instance;
+
           DatabaseReference ref = FirebaseDatabase.instance.ref("users/$uid");
-          print('1111');
-          // await ref.set({
-          //   "name": name,
-          //   "email": email,
-          //   "age": age,
-          //   "phone": phone,
-          //   "city": city
-          // });
-          print('22222222222');
+
+          await ref.set({
+            "name": name,
+            "age": age,
+            "city": city,
+            "phone": phone,
+            "email": email
+          });
+          // DatabaseReference ref = FirebaseDatabase.instance.ref("users/$uid");
+          // print('1111');
+          // // await ref.set({
+          // //   "name": name,
+          // //   "email": email,
+          // //   "age": age,
+          // //   "phone": phone,
+          // //   "city": city
+          // // });
+          // print('22222222222');
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => HomePage()),

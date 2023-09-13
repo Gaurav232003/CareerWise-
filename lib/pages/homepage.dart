@@ -113,7 +113,7 @@ class Home_Page extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  'Himanshu !!',
+                  '$Fname !!',
                   style: TextStyle(fontSize: 20.0),
                 ),
                 SizedBox(

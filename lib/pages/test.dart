@@ -3,6 +3,7 @@ import 'package:hackheads/components/data.dart';
 import 'package:hackheads/components/widgets.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hackheads/pages/homepage.dart';
+import 'result.dart';
 
 class Test extends StatefulWidget {
   const Test({super.key});
@@ -135,6 +136,11 @@ class _TestState extends State<Test> {
                             i++;
                             q++;
                           } else {
+                            int count =
+                                marks.where((element) => element == 1).length;
+                            print(count);
+                            print('-----------------');
+                            total = (count / 40) * 100;
                             print(marks);
                             for (int i = 0; i < questions1.length; i++) {
                               marks[i] = -1;
@@ -142,7 +148,7 @@ class _TestState extends State<Test> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomePage()),
+                                    builder: (context) => Result()),
                               );
                             }
                           }

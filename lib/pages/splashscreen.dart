@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackheads/components/data.dart';
 import 'test.dart';
 import 'dart:async';
 
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
+    total = 0;
     // Start a countdown timer
     Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {

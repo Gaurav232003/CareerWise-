@@ -1,6 +1,6 @@
 double height = 0;
 double width = 0;
-
+double total = 0;
 List<String> questions = [
   'What is the value of 3/4 + 1/8? ',
   'Solve for x: 2x - 5 = 15.',
@@ -152,11 +152,11 @@ List<String> CorrectAns = [
 List<int> marks = [];
 List<String> Selected = [];
 
-String name = "";
-int age = 0;
-String email = "";
-String phone = "";
-String city = "";
+String Fname = "";
+String Fage = "";
+String Femail = "";
+String Fphone = "";
+String Fcity = "";
 int group = 0;
 
 List<String> questions2 = [
