@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                 _selectedIndex = index;
               });
             },
-            padding: EdgeInsets.all(20.0),
+            // padding: EdgeInsets.all(20.0),
             tabs: [
               GButton(
                 icon: Icons.home,
