@@ -32,13 +32,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Splash Screen with Countdown'),
-      ),
+      backgroundColor: Color(0xFFF28F3B),
       body: Center(
-        child: Text(
-          '$_countdown', // Display the countdown value
-          style: TextStyle(fontSize: 48.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Test starts in:',
+              style: TextStyle(fontSize: 38.0),
+            ),
+            Text(
+              '$_countdown', // Display the countdown value
+              style: TextStyle(fontSize: 48.0),
+            ),
+          ],
         ),
       ),
     );
