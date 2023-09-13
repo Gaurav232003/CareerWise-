@@ -12,6 +12,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hackheads/pages/login.dart';
 import 'package:hackheads/pages/profile.dart';
 import 'package:hackheads/components/data.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});

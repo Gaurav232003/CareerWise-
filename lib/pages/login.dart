@@ -6,6 +6,8 @@ import 'package:hackheads/components/register.dart';
 import '../components/widgets.dart';
 import 'package:hackheads/components/data.dart';
 import '../components/textbox.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class Login extends StatelessWidget {
   const Login({super.key});

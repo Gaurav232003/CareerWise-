@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hackheads/components/data.dart';
@@ -32,5 +34,12 @@ class MyApp extends StatelessWidget {
     print('w');
     print(width);
     return const Login();
+    // return MaterialApp(
+    //   theme: ThemeData.dark().copyWith(
+    //     primaryColor: const Color(0xFF0A0E21),
+    //     scaffoldBackgroundColor: const Color(0xFF0A0E21),
+    //   ),
+    //   home: Login(),
+    // );
   }
 }
