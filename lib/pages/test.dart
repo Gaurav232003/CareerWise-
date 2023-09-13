@@ -100,11 +100,21 @@ class _TestState extends State<Test> {
                   ],
                 ),
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFF28F3B)),
-                  onPressed: () {},
-                  child: Text('NEXT >')),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF28F3B)),
+                      onPressed: () {},
+                      child: Text('< Prev')),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFF28F3B)),
+                      onPressed: () {},
+                      child: Text('NEXT >')),
+                ],
+              ),
               SizedBox(
                 height: height * 0.05,
               )
