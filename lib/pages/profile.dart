@@ -21,7 +21,9 @@ class Profile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    LoginSphere(),
+                    LoginSphere(
+                      img: 'assets/loginsphere.png',
+                    ),
                     SizedBox(
                       height: height * 0.05,
                     ),
