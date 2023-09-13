@@ -17,6 +17,7 @@ class _TestState extends State<Test> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color(0xFFE8D7C8),
         body: SingleChildScrollView(
           child: Column(
             children: [

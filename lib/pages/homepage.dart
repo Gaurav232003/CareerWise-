@@ -129,9 +129,9 @@ class Home_Page extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.star),
+                              Image.asset('assets/Group-40.png'),
                               Text(
-                                'Great\nDecesion',
+                                'Great\nDecision',
                                 style: TextStyle(fontSize: 30.0),
                               ),
                             ],

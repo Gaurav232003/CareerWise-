@@ -17,6 +17,9 @@ void main() async {
   // CheckData();
 
   runApp(MaterialApp(
+    // theme: ThemeData(
+    //   scaffoldBackgroundColor: Color(0xFFE8E8E8),
+    // ),
     debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
