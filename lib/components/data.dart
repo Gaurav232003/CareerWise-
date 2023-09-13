@@ -24,7 +24,7 @@ int age = 0;
 String email = "";
 String phone = "";
 String city = "";
-
+int group = 0;
 
 
 
