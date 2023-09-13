@@ -12,6 +12,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hackheads/pages/login.dart';
 import 'package:hackheads/pages/profile.dart';
 import 'package:hackheads/components/data.dart';
+import 'test.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -27,9 +28,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     Home_Page(),
-    Placeholder(
-      child: Center(child: Text('Coming Soon')),
-    ),
+    Test(),
     Placeholder(
       child: Center(child: Text('Coming Soon')),
     ),
