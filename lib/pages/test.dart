@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hackheads/components/data.dart';
 import 'package:hackheads/components/widgets.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hackheads/pages/homepage.dart';
 
 class Test extends StatefulWidget {
   const Test({super.key});
@@ -60,10 +61,10 @@ class _TestState extends State<Test> {
                         activeColor: Color(0xFFF28F3B),
                         title: Text(ans[i][j]),
                         value: ans[i][j],
-                        groupValue: selectedOption,
+                        groupValue: Selected[i],
                         onChanged: (value) {
                           setState(() {
-                            selectedOption = value!;
+                            Selected[i] = value!;
                           });
                         },
                       ),
@@ -123,10 +124,27 @@ class _TestState extends State<Test> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFF28F3B)),
                       onPressed: () {
+                        print(Selected[i]);
                         setState(() {
+                          if (Selected[i] == CorrectAns[i]) {
+                            marks[i] = 1;
+                          } else {
+                            marks[i] = 0;
+                          }
                           if (i != questions.length - 1) {
                             i++;
                             q++;
+                          } else {
+                            print(marks);
+                            for (int i = 0; i < questions.length; i++) {
+                              marks[i] = -1;
+                              Selected[i] = "";
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
+                              );
+                            }
                           }
                         });
                       },
