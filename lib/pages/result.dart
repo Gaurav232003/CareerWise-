@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/data.dart';
+import 'homepage.dart';
 
 class Result extends StatelessWidget {
   const Result({super.key});
@@ -57,6 +58,27 @@ class Result extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 90.0),
             ),
+            SizedBox(
+              height: height * 0.1,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.white),
+                  child: Text(
+                    'Return Home',
+                    style: TextStyle(color: Color(0xFFEF8D3A), fontSize: 30.0),
+                  ),
+                )),
+            SizedBox(height: height * 0.02),
           ]),
           padding: EdgeInsets.all(30.0),
         ),
