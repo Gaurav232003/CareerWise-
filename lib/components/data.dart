@@ -130,10 +130,11 @@ List<String> CorrectAns = [
   'Amperes',
   'Tokyo',
   'George Washington',
-  'Africa',
+  'Asia',
   '1492',
   'Nile river',
-  '9',
+  '15',
+  '25',
   '24 inches',
   'Rs. 7',
   '120 miles',
@@ -158,7 +159,192 @@ String phone = "";
 String city = "";
 int group = 0;
 
+List<String> questions2 = [
+  'Calculate the derivative of f(x) = 2x^3 - 6x^2 + 4x - 1.',
+  'Solve the equation: log(x) = 2.',
+  'What is the value of the integral ∫(2x + 3) dx from 0 to 4?',
+  'Find the solution to the system of equations: 3x - 2y = 7 2x + y = 5',
+  'What is the value of sin(π/3)?',
+  'If a right triangle has one angle of 30 degrees, what is the measure of the other acute angle?',
+  'Evaluate: √(16) + √(25) - √(9).',
+  'Calculate the value of 5! (5 factorial).',
+  'Find the solution to the equation: |2x - 5| = 7.',
+  'If a circle has a radius of 6 inches, what is its circumference?',
+  'Identify the literary device used in the sentence: "The stars danced in the night sky."',
+  'In Shakespeare\'s play "Macbeth," what is the name of the three witches who make predictions?',
+  'Which of the following is an example of a tragic flaw in literature?',
+  'What literary term describes the repetition of consonant sounds at the beginning of words in a sentence?',
+  'Who is the author of the novel "Pride and Prejudice"?',
+  'What is the chemical symbol for the element iron?',
+  'Which gas is responsible for the green color in plants\' leaves during photosynthesis?',
+  'What is the process by which plants lose water vapor through tiny openings in their leaves?',
+  'Which planet in our solar system has the largest number of moons?',
+  'What is the unit of measurement for electric resistance?',
+  'Who is often credited with the invention of the World Wide Web?',
+  'What was the major event that marked the beginning of World War I?',
+  'Which country is known as the "Land of the Rising Sun"?',
+  'Who was the first woman to fly solo across the Atlantic Ocean?',
+  'Which document begins with the words, "We the People"?',
+  'If a car travels at a constant speed of 60 miles per hour, how long does it take to travel 120 miles?',
+  'What is the next number in the sequence: 1, 4, 9, 16, _?',
+  'If a box contains 24 red balls and 16 blue balls, what is the probability of randomly selecting a red ball?',
+  'What is the square root of 144?',
+  'If a triangle has angles measuring 45 degrees, 45 degrees, and 90 degrees, what type of triangle is it?',
+  'Who wrote the play "Hamlet"?',
+  'What is the longest river in the world?',
+  'Which gas makes up the majority of Earth\'s atmosphere?',
+  'Who is the author of the novel "To Kill a Mockingbird"?',
+  'What is the chemical symbol for the element gold?',
+  'What is the first step in performing CPR (Cardiopulmonary Resuscitation)?',
+  'How do you properly use a fire extinguisher in case of a small fire?',
+  'Which of the following is a common method for conserving energy in a household?',
+  'What should you do if someone is choking and cannot breathe or speak?',
+  'How should you safely handle a knife in the kitchen?',
+];
 
+List<List<String>> options2 = [
+  [
+    '6x^2 - 12x + 4',
+    '6x^2 - 12x + 3',
+    '3x^2 - 6x + 2',
+    '2x^4 - 6x^3 + 4x^2 - 1'
+  ],
+  ['x = 0', 'x = 1', 'x = 10', 'x = 100'],
+  ['14', '16', '18', '20'],
+  ['x = 3, y = -1', 'x = 2, y = 1', 'x = 1, y = 2', 'x = 0, y = 3'],
+  ['√2/2', '√3/2', '1-2', '1'],
+  ['30 degrees', '45 degrees', '60 degrees', '90 degrees'],
+  ['10', '11', '12', '14'],
+  ['10', '20', '120', '60'],
+  ['x = -1', 'x = 6', 'x = 1', 'x = 4'],
+  ['6π inches', '12π inches', '18π inches', '36π inches'],
+  ['Smile', 'Metaphor', 'Personification', 'Hyperbole'],
+  [
+    'The Weird Sisters',
+    'The Enchanting Trio',
+    'The Mystic Coven',
+    'The Spellbinding Witches'
+  ],
+  [
+    'A character\'s kindness',
+    'A character\'s intelligence',
+    'A character\'s excessive pride',
+    'A character\'s loyalty'
+  ],
+  ['Smile', 'Alliteration', 'Hyperbole', 'Onomatopoeia'],
+  ['Charles Dickens', 'Jane Austen', 'Emily Brontë', 'Leo Tolstoy'],
+  ['Ir', 'In', 'Fe', 'Fi'],
+  ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'Chlorophyll'],
+  ['Photosynthesis', 'Transpiration', 'Respiration', 'Fermentation'],
+  ['Earth', 'Jupiter', 'Saturn', 'Mars'],
+  ['Ohms', 'Volts', 'Amperes', 'Watts'],
+  ['Bill Gates', 'Tim Berners-Lee', 'Steve Jobs', 'Mark Zuckerberg'],
+  [
+    'The sinking of the Titanic',
+    'The assassination of Archduke Franz Ferdinand',
+    'The signing of the Treaty of Versailles',
+    'The Battle of Stalingrad'
+  ],
+  ['China', 'India', 'Japan', 'South Korea'],
+  ['Amelia Earhart', 'Bessie Coleman', 'Harriet Quimby', 'Sally Ride'],
+  [
+    'The Declaration of Independence',
+    'The Gettysburg Address',
+    'The U.S. Constitution',
+    'The Bill of Rights'
+  ],
+  ['1 hour', '2 hour', '3 hour', '4 hour'],
+  ['20', '25', '36', '49'],
+  ['1-2', '2-3', '3-4', '4-5'],
+  ['12', '16', '10', '14'],
+  ['Equilateral', 'Isosceles', 'Scalene', 'Right'],
+  [
+    'William Shakespeare',
+    'George Orwell',
+    'F. Scott Fitzgerald',
+    'Charles Dickens'
+  ],
+  ['Amazon River', 'Nile River', 'Mississippi River', 'Yangtze River'],
+  ['Carbon dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen'],
+  ['Harper Lee', 'Mark Twain', 'J.K. Rowling', 'George Orwell'],
+  ['Go', 'Gd', 'Au', 'Ag'],
+  [
+    'Call 911',
+    'Check for breathing',
+    'Begin chest compressions',
+    'Tilt the head back'
+  ],
+  [
+    'Spray it in the air',
+    'Aim at the base of the fire and squeeze the handle',
+    'Pour water on the fire',
+    'Shake it vigorously before use'
+  ],
+  [
+    'Leaving lights on when not needed',
+    'Setting the thermostat to a very high temperature in winter',
+    'Using energy-efficient light bulbs',
+    'Running appliances on their highest settings'
+  ],
+  [
+    'Offer them water to drink',
+    'Perform the Heimlich maneuver',
+    'Hit them on the back',
+    'Ignore them and wait for help'
+  ],
+  [
+    'Hold it with the blade facing outward',
+    'Carry it by the handle with the blade down',
+    'Use it for tasks it\'s not designed for',
+    'Leave it on the edge of the counter'
+  ],
+];
 
+List<String> answers2 = [
+  '6x^2 - 12x + 4',
+  'x = 100',
+  '16',
+  'x = 3, y = -1',
+  '√3/2',
+  '60 degrees',
+  '10',
+  '120',
+  'x = 6',
+  '12π inches',
+  'Personification',
+  'The Weird Sisters',
+  'A character\'s excessive pride',
+  'Alliteration',
+  'Jane Austen',
+  'Fe',
+  'Chlorophyll',
+  'Transpiration',
+  'Jupiter',
+  'Ohms',
+  'Tim Berners-Lee',
+  'The assassination of Archduke Franz Ferdinand',
+  'Japan',
+  'Amelia Earhart',
+  'The U.S. Constitution',
+  '2 hour',
+  '25',
+  '2-3',
+  '12',
+  'Isosceles',
+  'William Shakespeare',
+  'Nile River',
+  'Nitrogen',
+  'Harper Lee',
+  'Au',
+  'Call 911',
+  'Aim at the base of the fire and squeeze the handle',
+  'Using energy-efficient light bulbs',
+  'Perform the Heimlich maneuver',
+  'Hold it with the blade facing outward',
+];
+
+List<String> questions1 = [];
+List<List<String>> options1 = [];
+List<String> answers1 = [];
 // Create a User object with the retrieved data
 

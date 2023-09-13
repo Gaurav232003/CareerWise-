@@ -32,6 +32,9 @@ class Group extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFF28F3B)),
                       onPressed: () {
+                        questions1 = questions;
+                        options1 = ans;
+                        answers1 = CorrectAns;
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                               builder: (BuildContext context) =>
@@ -52,6 +55,9 @@ class Group extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFFF28F3B)),
                       onPressed: () {
+                        questions1 = questions2;
+                        options1 = options2;
+                        answers1 = answers2;
                         group = 2;
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(

@@ -49,7 +49,7 @@ class _TestState extends State<Test> {
                         Flexible(
                           child: Text(
                             softWrap: true,
-                            questions[i],
+                            questions1[i],
                             style: TextStyle(
                                 fontSize: 28.0, fontWeight: FontWeight.w500),
                           ),
@@ -59,8 +59,8 @@ class _TestState extends State<Test> {
                     for (int j = 0; j < 4; j++)
                       RadioListTile(
                         activeColor: Color(0xFFF28F3B),
-                        title: Text(ans[i][j]),
-                        value: ans[i][j],
+                        title: Text(options1[i][j]),
+                        value: options1[i][j],
                         groupValue: Selected[i],
                         onChanged: (value) {
                           setState(() {
@@ -126,17 +126,17 @@ class _TestState extends State<Test> {
                       onPressed: () {
                         print(Selected[i]);
                         setState(() {
-                          if (Selected[i] == CorrectAns[i]) {
+                          if (Selected[i] == answers1[i]) {
                             marks[i] = 1;
                           } else {
                             marks[i] = 0;
                           }
-                          if (i != questions.length - 1) {
+                          if (i != questions1.length - 1) {
                             i++;
                             q++;
                           } else {
                             print(marks);
-                            for (int i = 0; i < questions.length; i++) {
+                            for (int i = 0; i < questions1.length; i++) {
                               marks[i] = -1;
                               Selected[i] = "";
                               Navigator.pushReplacement(
