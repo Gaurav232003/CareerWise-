@@ -54,6 +54,7 @@ class _TestState extends State<Test> {
                       ],
                     ),
                     RadioListTile(
+                      activeColor: Color(0xFFF28F3B),
                       title: Text('81% - 100%'),
                       value: '81% - 100%',
                       groupValue: selectedOption,
@@ -64,6 +65,7 @@ class _TestState extends State<Test> {
                       },
                     ),
                     RadioListTile(
+                      activeColor: Color(0xFFF28F3B),
                       title: Text('61% - 80%'),
                       value: '61% - 80%',
                       groupValue: selectedOption,
@@ -74,6 +76,7 @@ class _TestState extends State<Test> {
                       },
                     ),
                     RadioListTile(
+                      activeColor: Color(0xFFF28F3B),
                       title: Text('40% - 60%'),
                       value: '40% - 60%',
                       groupValue: selectedOption,
@@ -84,6 +87,7 @@ class _TestState extends State<Test> {
                       },
                     ),
                     RadioListTile(
+                      activeColor: Color(0xFFF28F3B),
                       title: Text('Below 40%'),
                       value: 'Below 40%',
                       groupValue: selectedOption,

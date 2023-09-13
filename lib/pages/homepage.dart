@@ -31,10 +31,10 @@ class _HomePageState extends State<HomePage> {
     Home_Page(),
     Test(),
     Placeholder(
-      child: Center(child: Text('Coming Soon')),
+      child: Scaffold(body: Center(child: Text('Coming Soon'))),
     ),
     Placeholder(
-      child: Center(child: Text('Coming Soon')),
+      child: Scaffold(body: Center(child: Text('Coming Soon'))),
     ),
     // Add more screens here
   ];
