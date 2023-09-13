@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hackheads/pages/homepage.dart';
 import 'data.dart';
 import 'widgets.dart';
 import 'dart:ui';
@@ -249,24 +250,25 @@ class Register extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () async {
-                          // if (_formKey.currentState!.validate()) {
-                          //   try {
-                          //     final UserCredential userCredential =
-                          //         await _auth.createUserWithEmailAndPassword(
-                          //       email: email.text,
-                          //       password: pass.text,
-                          //     );
+                          try {
+                            UserCredential userCredential = await FirebaseAuth
+                                .instance
+                                .createUserWithEmailAndPassword(
+                                    email: email.text.trim(),
+                                    password: pass.text.trim());
 
-                          //     if (userCredential.user != null) {
-                          //       // User has been successfully created.
-                          //       // You can navigate to the next screen or perform other actions here.
-                          //       print('User registration successful.');
-                          //     }
-                          //   } catch (e) {
-                          //     // Handle errors such as invalid email, weak password, etc.
-                          //     print('Error during registration: $e');
-                          //   }
-                          // }
+                            if (userCredential.user != null) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePage()),
+                              );
+                              print("yes");
+                            }
+                          } on FirebaseAuthException catch (e) {
+                            if (e.code == 'weak-password') {
+                            } else if (e.code == 'email-already-in-use') {}
+                          } catch (e) {}
                         },
                         child: Text(
                           'S u b m i t',
