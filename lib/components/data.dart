@@ -21,3 +21,15 @@ List<List<String>> ans = [
   ['81% - 100%', '61% - 80%', '40% - 60%', 'Below 40%'],
   ['1', '2', '3', '4']
 ];
+
+String name = "";
+int age = 0;
+String email = "";
+String phone = "";
+String city = "";
+
+
+
+
+// Create a User object with the retrieved data
+

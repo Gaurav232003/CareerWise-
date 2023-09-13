@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hackheads/pages/homepage.dart';
 import 'package:hackheads/components/register.dart';
@@ -8,10 +9,10 @@ import 'package:hackheads/components/data.dart';
 import '../components/textbox.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class Login extends StatelessWidget {
-  const Login({super.key});
-
+  Login({super.key});
+  TextEditingController email = TextEditingController();
+  TextEditingController pass = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -66,6 +67,7 @@ class Login extends StatelessWidget {
                           0xFFF4E2BF), // Set the background color of the container.
                     ),
                     child: TextBox(
+                      con: email,
                       hinttext: 'U S E R N A M E',
                       icon: Icon(
                         Icons.person,
@@ -91,6 +93,7 @@ class Login extends StatelessWidget {
                           0xFFF4E2BF), // Set the background color of the container.
                     ),
                     child: TextBox(
+                      con: pass,
                       hinttext: 'P A S S W O R D',
                       icon: Icon(
                         Icons.key,
@@ -112,7 +115,19 @@ class Login extends StatelessWidget {
                   padding:
                       EdgeInsets.only(left: width * 0.1, right: width * 0.1),
                   child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        UserCredential userCredential = await FirebaseAuth
+                            .instance
+                            .signInWithEmailAndPassword(
+                          email: email.text,
+                          password: pass.text,
+                        );
+                        print("YES");
+                        // User has been successfully logged in, navigate to home page
+
+                        User? user = FirebaseAuth.instance.currentUser;
+                        String ss = user!.email.toString();
+
                         Navigator.pushReplacement<void, void>(
                           context,
                           MaterialPageRoute<void>(
